@@ -5,18 +5,19 @@ Objetivo: Aqui vamos aprender a usar a API da OpenAI.
           realizar algumas queries e testar a plataforma da
           OpenAI 🤗.
 """
-import os
-import openai
-from dotenv import load_dotenv, find_dotenv
-from fastapi import FastAPI
-from pydantic import BaseModel
+import os # lidar com funcionalidades do sistema
+import openai # Interage com a API da OpenAI
+from dotenv import load_dotenv, find_dotenv # Carrega as variáveis de ambiente do arquivo '.env'
+from fastapi import FastAPI # Criação rápida de APIs
+from pydantic import BaseModel # Define o modelo dos dados
 
 
 app = FastAPI(title='🤗 Fazendo queries à API da OpenAI 🤗',
               version='1.0.0',
-              description="""Data Scientist.: PhD. Eddy Giusepe Chirinos Isidro""")
+              description="""Data Scientist Jr.: Karina Gonçalves Soares""")
 
 # Configuração da OpenAI:
+# lê a chave da api da openai do arquivo .env
 _ = load_dotenv(find_dotenv()) # read local .env file
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
